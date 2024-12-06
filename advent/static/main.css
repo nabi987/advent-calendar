@@ -1,0 +1,12 @@
+@import "card.css";
+body {
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Germania One;
+}
+
+h1{
+  color: red;
+}
