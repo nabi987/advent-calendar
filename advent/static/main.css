@@ -5,8 +5,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: Germania One;
+  padding: 25px;
 }
 
-h1{
+.title{
   color: red;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.4);
+  padding-bottom: 20px;
 }

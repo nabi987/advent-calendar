@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-import random
+import datetime
+
 app = Flask(__name__)
 
 jokes = [
@@ -30,10 +31,13 @@ jokes = [
     'What happened to the man who stole an Advent Calendar? He got 25 days!'
 ]
 
+current_day = datetime.datetime.now().day
+joke_for_today = jokes[current_day - 1] if 1 <= current_day <= 25 else "No joke for today!"
+
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', jokes=jokes)
+    return render_template('home.html', joke_for_today=joke_for_today, current_day=current_day)
 
 @app.route("/one")
 def one():

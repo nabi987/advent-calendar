@@ -1,26 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<div>
-  <h1>Advent of X-mas Jokes 🎄</h1>
+<div class="title">
+  <h1>Advent of X-mas Jokes 🎄🎅</h1>
 </div>
+
 <div class="cards">
   {% for day in range(1,26) %}
   <div class="card-door"
-      data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+      data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom-{{ day }}" aria-controls="offcanvasBottom-{{ day }}"
       style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(/static/images/door2.jpg)">
     {{ day }}
   </div>
-  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom-{{ day }}" aria-labelledby="offcanvasBottomLabel-{{ day }}">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <h5 class="offcanvas-title" id="offcanvasBottomLabel-{{ day }}"> {{ day }} </h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+
     <div class="offcanvas-body small">
-      {% for joke in jokes %}
-        {{ joke }}
-      {% endfor %}
+      {% if day == current_day %}
+        {{ joke_for_today }}
+      {% else %}
+        Sorry you have to come back on the correct day! 😉
+      {% endif %}
     </div>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+  {% endblock content %}
 </div>
-{% endblock content %}
