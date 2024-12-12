@@ -24,6 +24,14 @@
   grid-gap: 16px;
 }
 
+.modal-content {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  color: black;
+  font-size: 23px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

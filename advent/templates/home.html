@@ -6,27 +6,30 @@
 
 <div class="cards">
   {% for day in range(1,26) %}
-  <div class="card-door"
-      data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom-{{ day }}" aria-controls="offcanvasBottom-{{ day }}"
-      style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(/static/images/door2.jpg)">
-    {{ day }}
-  </div>
-
-  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom-{{ day }}" aria-labelledby="offcanvasBottomLabel-{{ day }}">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel-{{ day }}"> {{ day }} </h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="card-door"
+    data-bs-toggle="modal" data-bs-target="#exampleModal-{{ day }}"
+        style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(/static/images/door2.jpg)">
+      {{ day }}
     </div>
 
-    <div class="offcanvas-body small">
-      {% if day == current_day %}
-        {{ joke_for_today }}
-      {% else %}
-        Sorry you have to come back on the correct day! 😉
-      {% endif %}
+    <div class="modal fade" id="exampleModal-{{ day }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(/static/images/jokecard.jpg)">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Day {{ day }} 🎁</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {% if day == current_day %}
+              {{ joke_for_today }}
+            {% else %}
+              Sorry you have to come back on the correct day! 😉
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    {% endfor %}
-  </div>
-  {% endblock content %}
+
+  {% endfor %}
 </div>
+{% endblock content %}
