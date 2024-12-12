@@ -1,6 +1,8 @@
 ### Advent of X-mas Jokes 🎄🎅
 <img width="1199" alt="Screenshot 2024-12-09 at 13 46 53" src="https://github.com/user-attachments/assets/021da126-3b8f-4a7f-aa30-23f53d0b7d6e">
 
-<img width="1306" alt="Screenshot 2024-12-09 at 13 47 22" src="https://github.com/user-attachments/assets/8846c1c3-1f56-4701-81d4-aa4ea021891f">
+#### Joke will show when you click on the current day box
+<img width="1148" alt="Screenshot 2024-12-12 at 14 23 17" src="https://github.com/user-attachments/assets/5133a42e-8185-434e-82c3-7a08012b8e31" />
 
-<img width="1307" alt="Screenshot 2024-12-09 at 13 47 35" src="https://github.com/user-attachments/assets/b882139b-85a1-4237-8680-80f5003c9e49">
+#### If you click on a different day box...
+<img width="1152" alt="Screenshot 2024-12-12 at 14 24 03" src="https://github.com/user-attachments/assets/b86a8342-23d0-498e-9d17-693ddb3396b1" />
